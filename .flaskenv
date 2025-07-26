@@ -1,0 +1,2 @@
+FLASK_APP=pybo.py
+FLASK_DEBUG=1
