@@ -11,9 +11,13 @@
     <title>Hello, pybo!</title>
 </head>
 <body>
+<!-- navigation bar -->
+{% include "navbar.html" %}
 <!-- 基本テンプレートの中に挿入される内容Start -->
 {% block content %}
 {% endblock %}
 <!-- 基本テンプレートの中に挿入される内容End -->
+ <!-- Bootstrap JS -->
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 </body>
 </html>
