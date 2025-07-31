@@ -29,6 +29,21 @@
     {% endfor %}
     <!-- 回答登録 -->
     <form action="{{ url_for('answer.create', question_id=question.id) }}" method="post" class="my-3">
+        {{ form.csrf_token }}
+        <!-- エラー表示 Start -->
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for field, errors in form.errors.items() %}
+            <strong>{{ form[field].label }}</strong>
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- エラー表示 End -->
         <div class="mb-3">
             <textarea name="content" id="content" class="form-control" rows="10"></textarea>
         </div>
